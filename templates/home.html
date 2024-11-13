@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
     <title>Sergio Cespedes - Pipeline TD</title>
 </head>
 
 <body>
-
     <nav class="navigation">
-
         <div class="nav-item">
-          <img src="static/img/logo.png" alt="Global">
+          <img src="/static/img/Sergio_Cespedes_small.png" alt="Global">
         </div>
 
         <div class="nav-item">
@@ -24,10 +23,6 @@
         </div>
         <div class="nav-item">
             <span class="nav-number">03</span>
-            <a href="#about" class="nav-text">About</a>
-        </div>
-        <div class="nav-item">
-            <span class="nav-number">04</span>
             <a href="#contact" class="nav-text">Contact</a>
         </div>
     </nav>
@@ -42,7 +37,7 @@
                 </svg>
             </a>
         </div>
-        <img src="/static/img/Astronaut.png" alt="Astronaut" class="hero-image animate-fade-in">
+        <img src="/static/img/abstract.jpg" alt="VFX" class="hero-image animate-fade-in">
     </section>
 
     <section id="projects" class="projects">
@@ -60,34 +55,65 @@
         </div>
     </section>
 
-    <script>
-        // Intersection Observer for fade-in animations
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
+    <section id="projects" class="projects">
+        <div class="project-card animate-fade-in">
+            <h3 class="project-title">METIEW & SMITH</h3>
+            <p class="project-description">Building studio pipeline, implementing local rendering system with Deadline and developing cloud system for ML tasks.</p>
+        </div>
+        <div class="project-card animate-fade-in">
+            <h3 class="project-title">FANTASY INTERACTIVE</h3>
+            <p class="project-description">VFX techniques implementation with Blender and After Effects in creative advertising projects.</p>
+        </div>
+        <div class="project-card animate-fade-in">
+            <h3 class="project-title">PAUL & SHARK</h3>
+            <p class="project-description">Development of scalable solutions and integration of cutting-edge technologies for VFX pipelines.</p>
+        </div>
+    </section>
 
-        document.querySelectorAll('.animate-fade-in').forEach(element => {
-            element.style.opacity = '0';
-            element.style.transform = 'translateY(20px)';
-            observer.observe(element);
-        });
+    <section id="projects" class="projects">
+        <div class="project-card animate-fade-in">
+            <h3 class="project-title">METIEW & SMITH</h3>
+            <p class="project-description">Building studio pipeline, implementing local rendering system with Deadline and developing cloud system for ML tasks.</p>
+        </div>
+        <div class="project-card animate-fade-in">
+            <h3 class="project-title">FANTASY INTERACTIVE</h3>
+            <p class="project-description">VFX techniques implementation with Blender and After Effects in creative advertising projects.</p>
+        </div>
+        <div class="project-card animate-fade-in">
+            <h3 class="project-title">PAUL & SHARK</h3>
+            <p class="project-description">Development of scalable solutions and integration of cutting-edge technologies for VFX pipelines.</p>
+        </div>
+    </section>
 
-        // Smooth scroll for navigation
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+
 </body>
 </html>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+document.querySelectorAll('.animate-fade-in').forEach(element => {
+    element.style.opacity = '0';
+    element.style.transform = 'translateY(20px)';
+    observer.observe(element);
+});
+
+// Smooth scroll for navigation
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+</script>

@@ -8,7 +8,7 @@
         :root {
             --primary-color: #ffffff;
             --background-color: #0a0a0a;
-            --accent-color: #0066ff;
+            --accent-color: #2093d5;
             --text-secondary: #888888;
             --card-background: rgba(255, 255, 255, 0.05);
         }
@@ -30,7 +30,7 @@
         .navigation {
             position: fixed;
             left: 2rem;
-            top: 50%;
+            top: 12%;
             transform: translateY(-50%);
             z-index: 100;
         }
@@ -187,16 +187,20 @@
 <body>
     <nav class="navigation">
         <div class="nav-item">
+          <img src="/static/img/Sergio_Cespedes_small.png" alt="Global">
+        </div>
+
+        <div class="nav-item">
             <span class="nav-number">01</span>
-            <a href="index.html" class="nav-text">Home</a>
+            <a href="/" class="nav-text">Home</a>
         </div>
         <div class="nav-item">
             <span class="nav-number">02</span>
-            <a href="#tools" class="nav-text">Tools</a>
+            <a href="#projects" class="nav-text">Projects</a>
         </div>
         <div class="nav-item">
             <span class="nav-number">03</span>
-            <a href="#blog" class="nav-text">Blog</a>
+            <a href="#contact" class="nav-text">Contact</a>
         </div>
     </nav>
 
@@ -209,7 +213,7 @@
 
     <section class="blog-grid">
         <article class="blog-card animate-fade-in">
-            <img src="/api/placeholder/400/200" alt="Deadline Render Setup" class="blog-image">
+            <img src="/static/img/about-history.jpg" alt="Deadline Render Setup" class="blog-image">
             <div class="blog-content">
                 <span class="blog-tag">Pipeline</span>
                 <h2 class="blog-title">Setting Up Deadline Render Farm</h2>
@@ -224,7 +228,7 @@
         </article>
 
         <article class="blog-card animate-fade-in">
-            <img src="/api/placeholder/400/200" alt="Cloud Computing" class="blog-image">
+            <img src="/static/img/about-visual.png" alt="Cloud Computing" class="blog-image">
             <div class="blog-content">
                 <span class="blog-tag">Cloud</span>
                 <h2 class="blog-title">Cloud Infrastructure for ML Tasks</h2>
@@ -239,7 +243,7 @@
         </article>
 
         <article class="blog-card animate-fade-in">
-            <img src="/api/placeholder/400/200" alt="Pipeline Development" class="blog-image">
+            <img src="/static/img/about-winners.jpg" alt="Pipeline Development" class="blog-image">
             <div class="blog-content">
                 <span class="blog-tag">Development</span>
                 <h2 class="blog-title">Building with Ayon (OpenPype)</h2>
@@ -254,7 +258,7 @@
         </article>
 
         <article class="blog-card animate-fade-in">
-            <img src="/api/placeholder/400/200" alt="Linux Setup" class="blog-image">
+            <img src="/static/img/about-philosophy.jpg" alt="Linux Setup" class="blog-image">
             <div class="blog-content">
                 <span class="blog-tag">System</span>
                 <h2 class="blog-title">Linux Environment Setup</h2>
