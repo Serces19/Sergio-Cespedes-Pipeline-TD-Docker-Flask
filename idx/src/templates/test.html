@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+
+{% block title %}
+    Home
+{% endblock %}
+
+
+{% block main %}
+
+<div class="views">
+    <main class="shots_table" id="customers_table">
+         <section class="table__header">
+          <h1 style="color: white; font-size: 16pt;">ATOM STUDIO</h1>
+             <div class="input-group">
+                 <input placeholder="Search">
+                 <img src="./static/search.png">
+             </div>
+              <select id="name_filter" class="form-select" placeholder="Name" aria-label="Default select example" onchange="myFunction()">
+                <option selected>All</option>
+                <option value="1">Brayan</option>
+                <option value="2">Sergio</option>
+                <option value="3">Aitor</option>
+              </select>
+
+              <select id="status_filter" class="form-select" placeholder="Status" aria-label="Default select example" onchange="myFunction2()">
+                <option selected>All</option>
+                <option value="1">Finish</option>
+                <option value="2">In progress</option>
+                <option value="3">To start</option>
+              </select>
+
+            <button id="toggleThemeBtn">Toggle Theme</button>
+         </section>
+         <section class="table__body">
+             <table id="shots">
+                 <thead>
+                     <tr>
+                        <th> Nro  <span class="icon-arrow">&#9660;</span> </th>
+                        <th> Image </th>
+                        <th> Shot </th>
+                        <th> Description </th>
+                        <th> Project </th>
+                        <th> Version </th>
+                        <th> Status </th>
+                        <th> Tasks </th>
+                     </tr>
+                 </thead>
+
+                 <tbody>
+                    {% for shot in shots %}
+                    <tr>
+                        <td>{{ loop.index }}</td>
+                        <td><img src="static/image.jpg"></td>
+                        <td>{{ shot.shot }}</td>
+                        <td>{{ shot.descripcion }}</td>
+                        <td>{{ shot.proyecto }}</td>
+                        <td>{{ shot.version }}</td>
+                        <td>
+                            <p class="status delivered">{{ shot.estado }}
+                        </td>
+                        <td>
+                            <button class="toggle-btn" data-target="tabla{{ loop.index }}">Details</button>
+                            {% for tarea in shot.tasks %}
+                            <div class="task-label">{{ tarea.task }}</div>
+                            {% endfor %}
+                            <table class="nested-table" id="tabla{{ loop.index }}">
+                              <thead>
+                                <tr>
+                                  <th>Asignado</th>
+                                  <th>Estado</th>
+                                  <th>Tarea</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {% for tarea in shot.tasks %}
+                                <tr>
+                                    <td>{{ tarea.asignado }}</td>
+                                    <td>{{ tarea.estado }}</td>
+                                    <td>{{ tarea.task }}</td>
+                                </tr>
+                                {% endfor %}
+                                
+                              </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                  </tbody>
+
+             </table>
+         </section>
+    </main>
+</div>  
+    <script src="./static/script.js"></script>
+     
+
+{% endblock %}

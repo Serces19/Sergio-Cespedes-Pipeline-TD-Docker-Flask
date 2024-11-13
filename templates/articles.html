@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sergio Cespedes - Tools & Blog</title>
+    <style>
+        :root {
+            --primary-color: #ffffff;
+            --background-color: #0a0a0a;
+            --accent-color: #0066ff;
+            --text-secondary: #888888;
+            --card-background: rgba(255, 255, 255, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        }
+
+        body {
+            background-color: var(--background-color);
+            color: var(--primary-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .navigation {
+            position: fixed;
+            left: 2rem;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 100;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            margin: 1rem 0;
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+
+        .nav-item:hover {
+            opacity: 1;
+        }
+
+        .nav-number {
+            font-size: 0.8rem;
+            margin-right: 1rem;
+            color: var(--text-secondary);
+        }
+
+        .nav-text {
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .header {
+            height: 50vh;
+            display: flex;
+            align-items: center;
+            padding: 0 10%;
+            background: linear-gradient(to right, var(--background-color), rgba(0, 102, 255, 0.1));
+        }
+
+        .header-content {
+            width: 100%;
+        }
+
+        .title {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+        }
+
+        .subtitle {
+            color: var(--text-secondary);
+            font-size: 1.2rem;
+            max-width: 600px;
+        }
+
+        .blog-grid {
+            padding: 5rem 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .blog-card {
+            background-color: var(--card-background);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 2rem;
+        }
+
+        .blog-tag {
+            display: inline-block;
+            background-color: var(--accent-color);
+            color: var(--primary-color);
+            padding: 0.3rem 1rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .blog-excerpt {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .blog-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .blog-link svg {
+            margin-left: 0.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .blog-link:hover svg {
+            transform: translateX(5px);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        @media (max-width: 768px) {
+            .navigation {
+                display: none;
+            }
+
+            .header {
+                padding: 0 5%;
+                text-align: center;
+            }
+
+            .title {
+                font-size: 3rem;
+            }
+
+            .blog-grid {
+                padding: 3rem 5%;
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navigation">
+        <div class="nav-item">
+            <span class="nav-number">01</span>
+            <a href="index.html" class="nav-text">Home</a>
+        </div>
+        <div class="nav-item">
+            <span class="nav-number">02</span>
+            <a href="#tools" class="nav-text">Tools</a>
+        </div>
+        <div class="nav-item">
+            <span class="nav-number">03</span>
+            <a href="#blog" class="nav-text">Blog</a>
+        </div>
+    </nav>
+
+    <header class="header">
+        <div class="header-content animate-fade-in">
+            <h1 class="title">Tools & Blog</h1>
+            <p class="subtitle">Explore my development tools, technical insights, and experiences in VFX pipeline development.</p>
+        </div>
+    </header>
+
+    <section class="blog-grid">
+        <article class="blog-card animate-fade-in">
+            <img src="/api/placeholder/400/200" alt="Deadline Render Setup" class="blog-image">
+            <div class="blog-content">
+                <span class="blog-tag">Pipeline</span>
+                <h2 class="blog-title">Setting Up Deadline Render Farm</h2>
+                <p class="blog-excerpt">A comprehensive guide to implementing and configuring Deadline for optimal rendering performance in a VFX pipeline.</p>
+                <a href="#" class="blog-link">
+                    Read More
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </article>
+
+        <article class="blog-card animate-fade-in">
+            <img src="/api/placeholder/400/200" alt="Cloud Computing" class="blog-image">
+            <div class="blog-content">
+                <span class="blog-tag">Cloud</span>
+                <h2 class="blog-title">Cloud Infrastructure for ML Tasks</h2>
+                <p class="blog-excerpt">Exploring scalable cloud solutions for machine learning tasks in VFX production environments.</p>
+                <a href="#" class="blog-link">
+                    Read More
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </article>
+
+        <article class="blog-card animate-fade-in">
+            <img src="/api/placeholder/400/200" alt="Pipeline Development" class="blog-image">
+            <div class="blog-content">
+                <span class="blog-tag">Development</span>
+                <h2 class="blog-title">Building with Ayon (OpenPype)</h2>
+                <p class="blog-excerpt">Deep dive into pipeline development using Ayon, formerly known as OpenPype, for efficient asset management.</p>
+                <a href="#" class="blog-link">
+                    Read More
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </article>
+
+        <article class="blog-card animate-fade-in">
+            <img src="/api/placeholder/400/200" alt="Linux Setup" class="blog-image">
+            <div class="blog-content">
+                <span class="blog-tag">System</span>
+                <h2 class="blog-title">Linux Environment Setup</h2>
+                <p class="blog-excerpt">Essential guide to configuring a Linux environment for VFX pipeline development and production.</p>
+                <a href="#" class="blog-link">
+                    Read More
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 12h14M12 5l7 7-7 7"/>
+                    </svg>
+                </a>
+            </div>
+        </article>
+    </section>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.animate-fade-in').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>

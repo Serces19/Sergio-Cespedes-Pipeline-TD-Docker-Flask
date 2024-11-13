@@ -1,0 +1,48 @@
+/* Estilos personalizados */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Montserrat;
+}
+
+body {
+  min-height: 100vh;
+  background: rgb(198, 198, 198) center / cover;
+}
+
+  .navbar-brand {
+    font-weight: bolder;
+  }
+ 
+  .content {
+    flex: 1; /* Hace que el contenido principal ocupe el espacio restante */
+  }
+  
+  .jumbotron {
+    background-image: url('https://images.pexels.com/photos/9667826/pexels-photo-9667826.jpeg');
+    background-size: cover;
+    color: rgb(97, 97, 97);
+    text-align: center;
+    padding: 100px 0;
+    margin-bottom: 0;
+  }
+  
+  .feature {
+    padding: 50px 0;
+    text-align: center;
+  }
+  
+  .feature-icon {
+    font-size: 50px;
+    margin-bottom: 20px;
+  }
+  
+  .footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  

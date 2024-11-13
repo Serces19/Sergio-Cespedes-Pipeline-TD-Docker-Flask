@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sergio Cespedes - Pipeline TD</title>
+</head>
+
+<body>
+
+    <nav class="navigation">
+
+        <div class="nav-item">
+          <img src="static/img/logo.png" alt="Global">
+        </div>
+
+        <div class="nav-item">
+            <span class="nav-number">01</span>
+            <a href="#home" class="nav-text">Home</a>
+        </div>
+        <div class="nav-item">
+            <span class="nav-number">02</span>
+            <a href="#projects" class="nav-text">Projects</a>
+        </div>
+        <div class="nav-item">
+            <span class="nav-number">03</span>
+            <a href="#about" class="nav-text">About</a>
+        </div>
+        <div class="nav-item">
+            <span class="nav-number">04</span>
+            <a href="#contact" class="nav-text">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home" class="hero">
+        <div class="hero-content animate-fade-in">
+            <h1 class="title">Sergio Cespedes<br>Pipeline TD</h1>
+            <a href="/articles" class="cta-button">
+                SEE MY TOOLS
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+            </a>
+        </div>
+        <img src="/static/img/Astronaut.png" alt="Astronaut" class="hero-image animate-fade-in">
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="project-card animate-fade-in">
+            <h3 class="project-title">METIEW & SMITH</h3>
+            <p class="project-description">Building studio pipeline, implementing local rendering system with Deadline and developing cloud system for ML tasks.</p>
+        </div>
+        <div class="project-card animate-fade-in">
+            <h3 class="project-title">FANTASY INTERACTIVE</h3>
+            <p class="project-description">VFX techniques implementation with Blender and After Effects in creative advertising projects.</p>
+        </div>
+        <div class="project-card animate-fade-in">
+            <h3 class="project-title">PAUL & SHARK</h3>
+            <p class="project-description">Development of scalable solutions and integration of cutting-edge technologies for VFX pipelines.</p>
+        </div>
+    </section>
+
+    <script>
+        // Intersection Observer for fade-in animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        document.querySelectorAll('.animate-fade-in').forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(20px)';
+            observer.observe(element);
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
